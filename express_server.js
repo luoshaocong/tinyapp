@@ -111,13 +111,7 @@ app.get("/urls/new", (req, res) => {
     res.render("pages/urls_new", { user_email: users[userId].email});
   }
 });
-/*
-  If visitor visits /urls/[some_short_url] then
-  if not logged in/registered, then get them to login/register
-  if current user isn't url owner, tell them they don't own url
-  check if shortURL is in database, if so load page with updated/edited input (url)
-  assuming shortURL not found, send 404.
-*/
+
 app.get("/urls/:id", (req, res) => {
   let urlID = req.params.id;
   let userId = req.session.user_id;
